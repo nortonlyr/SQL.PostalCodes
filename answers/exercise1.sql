@@ -9,9 +9,9 @@ ORDER BY state;
 -- Write a Query that returns all the Counties by State on separate lines.  ?????
 -- (Add your query to the file exercise1-b.sql)
 
-SELECT county,state
+SELECT DISTINCT county, state
 FROM zipcodes
-Order BY state, county
+Order BY state, county;
 
 
 -- Write a Query that returns all the Counties by state, as a concatenated string.
@@ -22,22 +22,16 @@ FROM zipcodes
 GROUP BY state
 ORDER BY state;
 
-SELECT CONCAT(county, ': ', state)
-FROM zipcodes;
 
 
 -- Write a Query that returns number of Counties by state.
 -- (Add your query to the file exercise1-d.sql)
 
-SELECT  state, COUNT(county) AS total
+SELECT  state, COUNT(DISTINCT county) AS total
 FROM zipcodes
 GROUP BY state
 ORDER BY state;
 
-SELECT state, count(county)
-FROM zipcodes
-GROUP BY state
-ORDER BY state;
 
 -- Write a Query that returns all of the individual timezones.
 -- (Add your query to the file exercise1-e.sql)
